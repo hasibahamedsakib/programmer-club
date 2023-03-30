@@ -2,7 +2,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const Blog = ({ blog, handleClick }) => {
+const Blog = ({ blog, handleClick, handleTime }) => {
   return (
     <div className=" mb-5 ps-4 pe-4">
       <img
@@ -40,7 +40,14 @@ const Blog = ({ blog, handleClick }) => {
         <p className="ms-4">#programming</p>
       </div>
       <h2 className="">{blog.title}</h2>
-      <button className="btn btn-link text-start border">Mark as read</button>
+      <button
+        onClick={() => {
+          handleTime(blog.read);
+        }}
+        className="btn btn-link text-start border"
+      >
+        Mark as read
+      </button>
     </div>
   );
 };
