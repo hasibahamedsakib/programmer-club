@@ -1,9 +1,12 @@
 import React from "react";
+import Blogs from "./components/Blogs/Blogs";
+import Header from "./components/Header/Header";
 
 const App = () => {
   return (
-    <div>
-      <h1>Welcome ,welcome to our programmer club website</h1>
+    <div className="container">
+      <Header />
+      <Blogs />
     </div>
   );
 };
