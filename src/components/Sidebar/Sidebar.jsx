@@ -9,10 +9,10 @@ const Sidebar = ({ title, time }) => {
     setTotalTime(getTime);
   }, [time, title]);
   return (
-    <>
+    <div className="sticky-md-top">
       <div className="card bg-light mb-4">
         <h3 className="text-primary p-4">
-          Spent time on read : {totalTime} min
+          Spent time on read : {totalTime || 0} min
         </h3>
       </div>
       <div className="card bg-light ">
@@ -23,7 +23,7 @@ const Sidebar = ({ title, time }) => {
           </h4>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

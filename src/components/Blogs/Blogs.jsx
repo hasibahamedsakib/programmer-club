@@ -20,7 +20,7 @@ const Blogs = () => {
     let findTitle = myTitle.find((pt) => pt == title);
 
     if (findTitle) {
-      toast.error("🦄 This Title Already Added!", {
+      toast.error("🦄 This Card Already Bookmarked!", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -31,7 +31,7 @@ const Blogs = () => {
         theme: "dark",
       });
     } else {
-      toast.success("🦄 Wow! Title added", {
+      toast.success("🦄 Wow! Bookmark Add successfully", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
