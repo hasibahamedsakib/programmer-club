@@ -12,25 +12,27 @@ const Blog = ({ blog, handleClick, handleTime }) => {
         style={{ height: "450px" }}
       />
 
-      <div className="d-flex justify-content-between m-3">
+      <div className="d-flex m-3">
         <img
           style={{ width: "50px", height: "50px", borderRadius: "50px" }}
           src={blog.userProfile}
           alt=""
         />
-        <div className="justify-content-start">
-          <h5>{blog.author}</h5>
-          <p>{blog.publish}</p>
-        </div>
+        <div className="d-flex w-100 justify-content-between ms-3">
+          <div>
+            <h5>{blog.author}</h5>
+            <p>{blog.publish}</p>
+          </div>
 
-        <div>
-          <p className="fs-5">
-            {blog.read} min read{" "}
-            <FontAwesomeIcon
-              onClick={() => handleClick(blog)}
-              icon={faBookmark}
-            />
-          </p>
+          <div className="d-flex">
+            <p className="fs-5">
+              {blog.read} min read{" "}
+              <FontAwesomeIcon
+                onClick={() => handleClick(blog)}
+                icon={faBookmark}
+              />
+            </p>
+          </div>
         </div>
 
         {/*  */}
