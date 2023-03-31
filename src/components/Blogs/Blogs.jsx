@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Blog from "../Blog/Blog";
 import Sidebar from "../Sidebar/Sidebar";
+
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [myTitle, setTitle] = useState([]);
@@ -18,13 +20,27 @@ const Blogs = () => {
     let findTitle = myTitle.find((pt) => pt == title);
 
     if (findTitle) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Title already Added!",
+      toast.error("🦄 This Title Already Added!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
     } else {
-      Swal.fire("Good job!", "Card Title Is added!", "success");
+      toast.success("🦄 Wow! Title added", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       let allTitle = [...myTitle, title];
       setTitle(allTitle);
     }
@@ -58,6 +74,7 @@ const Blogs = () => {
       <div className="col-md-4 col-12">
         <Sidebar title={myTitle} time={time} />
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
