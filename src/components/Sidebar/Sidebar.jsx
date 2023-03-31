@@ -10,13 +10,18 @@ const Sidebar = ({ title, time }) => {
   }, [time, title]);
   return (
     <>
-      <div className="card bg-light ">
+      <div className="card bg-light mb-4">
         <h3 className="text-primary p-4">
           Spent time on read : {totalTime} min
         </h3>
       </div>
       <div className="card bg-light ">
-        <h4 className="m-3 p-2 bg-white">{title}</h4>
+        <h3 className="m-3 p-2">Bookmarked Blogs : {title?.length}</h3>
+        {title.map((title, inx) => (
+          <h4 key={inx} className="m-3 p-2 bg-white">
+            {title}
+          </h4>
+        ))}
       </div>
     </>
   );

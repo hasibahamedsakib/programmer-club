@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import Blog from "../Blog/Blog";
 import Sidebar from "../Sidebar/Sidebar";
-
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const [title, setTitle] = useState("");
+  const [myTitle, setTitle] = useState([]);
   const [time, setTime] = useState(0);
   useEffect(() => {
     fetch("data.json")
@@ -14,14 +14,21 @@ const Blogs = () => {
 
   const handleClick = (cart) => {
     const { title, id } = cart;
-    setTitle(title);
 
-    let cartTitle = {};
-    const getTitle = cartTitle[id];
-    if (getTitle) {
-      alert("already added");
+    let findTitle = myTitle.find((pt) => pt == title);
+
+    if (findTitle) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Title already Added!",
+      });
+    } else {
+      Swal.fire("Good job!", "Card Title Is added!", "success");
+      let allTitle = [...myTitle, title];
+      setTitle(allTitle);
     }
-    localStorage.setItem("cart-title", JSON.stringify(cartTitle));
+    // console.log(al);
   };
 
   const handleTime = (time) => {
@@ -49,7 +56,7 @@ const Blogs = () => {
         ))}
       </div>
       <div className="col-md-4 col-12">
-        <Sidebar title={title} time={time} />
+        <Sidebar title={myTitle} time={time} />
       </div>
     </div>
   );
