@@ -3,9 +3,9 @@ import React from "react";
 const Header = () => {
   return (
     <>
-      <div className="d-flex justify-content-between mt-4 mb-4 align-items-center">
+      <div className="d-md-flex justify-content-between mt-4 mb-4 align-items-center text-center">
         <h2>Programming Club</h2>
-        <div>
+        <div className="text-center">
           <a
             className="text-decoration-none  me-5 text-dark fs-5 fw-semibold"
             href="/"
@@ -25,6 +25,7 @@ const Header = () => {
             Aside
           </a>
           <img
+            className="d-none d-md-inline-flex"
             style={{ width: "50px", height: "50px", borderRadius: "50px" }}
             src="user2.jpg"
             alt=""
