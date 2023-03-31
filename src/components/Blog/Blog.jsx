@@ -27,7 +27,7 @@ const Blog = ({ blog, handleClick, handleTime }) => {
           <p className="fs-5">
             {blog.read} min read{" "}
             <FontAwesomeIcon
-              onClick={() => handleClick(blog.title)}
+              onClick={() => handleClick(blog)}
               icon={faBookmark}
             />
           </p>

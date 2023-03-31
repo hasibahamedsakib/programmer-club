@@ -12,15 +12,16 @@ const Blogs = () => {
       .then((data) => setBlogs(data));
   }, []);
 
-  const handleClick = (title) => {
+  const handleClick = (cart) => {
+    const { title, id } = cart;
     setTitle(title);
 
-    const getTitle = JSON.parse(localStorage.getItem("title"));
+    let cartTitle = {};
+    const getTitle = cartTitle[id];
     if (getTitle) {
-      console.log("ache");
-    } else {
-      localStorage.setItem("title", JSON.stringify(title));
+      alert("already added");
     }
+    localStorage.setItem("cart-title", JSON.stringify(cartTitle));
   };
 
   const handleTime = (time) => {
