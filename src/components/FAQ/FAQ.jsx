@@ -106,25 +106,16 @@ const FAQ = () => {
               <strong>
                 <ol>
                   <li>
-                    When i call useEffect in my component, this is effectively
-                    queuing or scheduling an effect to maybe run, after the
-                    render is done.
+                    when Validating input field values,that time we are using
+                    useEffect
                   </li>
                   <li>
-                    After rendering finishes, useEffect will check the list of
-                    dependency values against the values from the last render,
-                    and will call your effect function if any one of them has
-                    changed.
+                    When we are directly manipulation dom ,then we are using
+                    useEffect
                   </li>
                   <li>
-                    You can pass the special value of empty array [] as a way of
-                    saying “only run on mount, and clean up on unmount”. So if
-                    we changed our component above to call useEffect like this:
-                  </li>
-                  <li>
-                    Then it will print “mounted” after the initial render,
-                    remain silent throughout its life, and print “unmounting…”
-                    on its way out.
+                    Running State Changing,as wel as , when we are fetching data
+                    from api or other site. that time we are using useEffect
                   </li>
                 </ol>
               </strong>
